@@ -16,6 +16,8 @@
 #include "util/printing.h"
 #include "util/time.h"
 
+#include "index/ranker/practice_ranker.h"
+
 using namespace meta;
 
 /**
@@ -48,6 +50,10 @@ int main(int argc, char* argv[])
     // Register additional analyzers.
     parser::register_analyzers();
     sequence::register_analyzers();
+
+		// Register additional rankers
+		/*template void*/ index::register_ranker<index::practice_ranker>();
+		//index::register_ranker(practice_ranker);
 
     // Create an inverted index using a splay cache. The arguments forwarded
     //  to make_index are the config file for the index and any parameters

@@ -18,6 +18,14 @@ void ranker_factory::reg()
     add(Ranker::id, make_ranker<Ranker>);
 }
 
+/*
+template <class Ranker>
+void register_ranker()
+{
+	    ranker_factory::get().add(Ranker::id, make_ranker<Ranker>);
+}
+*/
+
 ranker_factory::ranker_factory()
 {
     // built-in rankers
@@ -26,6 +34,9 @@ ranker_factory::ranker_factory()
     reg<jelinek_mercer>();
     reg<okapi_bm25>();
     reg<pivoted_length>();
+
+		// adding ranking functions
+		//register_ranker<practice_ranker>();
 }
 
 std::unique_ptr<ranker> make_ranker(const cpptoml::table& config)

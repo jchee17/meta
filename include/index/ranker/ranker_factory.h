@@ -45,6 +45,13 @@ class ranker_factory : public util::factory<ranker_factory,
      */
     template <class Ranker>
     void reg();
+		
+		/**
+		 * Register ranking function for 
+		 * client made rankers
+		 */
+		//template <class Ranker>
+		//void register_ranker();
 };
 
 /**
